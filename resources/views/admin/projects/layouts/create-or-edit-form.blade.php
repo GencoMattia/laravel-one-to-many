@@ -14,6 +14,16 @@
                 <input type="text" name="title" id="title" class="form-control" value="{{ old("title", $project->title) }}">
             </div>
             <div class="mb-3">
+                <label for="type_id">
+                    Type:
+                </label>
+                <select class="form-select" aria-label="Default select example" name="type_id" id="type_id">
+                    @foreach ( $types as $type )
+                    <option value="{{ $type->id }}">{{ $type->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
                 <label for="image">
                     Image url:
                 </label>
