@@ -21,4 +21,8 @@ class Project extends Model
         'author',
         'creation_date',
     ];
+
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
 }
