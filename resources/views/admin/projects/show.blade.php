@@ -13,6 +13,9 @@
                     </p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
+                            <strong>Type: </strong>{{ $project->type->name }}
+                        </li>
+                        <li class="list-group-item">
                             <strong>Technologies:</strong>{{ $project->technologies }}
                         </li>
                         <li class="list-group-item">
