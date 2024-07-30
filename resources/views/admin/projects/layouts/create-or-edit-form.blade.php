@@ -3,6 +3,17 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>
+                            {{ $error }}
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="@yield("form-action")" method="POST">
             @csrf
             @yield("form-method")
@@ -19,7 +30,9 @@
                 </label>
                 <select class="form-select" aria-label="Default select example" name="type_id" id="type_id">
                     @foreach ( $types as $type )
-                    <option value="{{ $type->id }}">{{ $type->name }}</option>
+                        <option value="{{ $type->id }}"
+                            {{ ($type->id == old("type_id", $project->type_id)) ? "selected" : "" }}
+                            >{{ $type->name }}</option>
                     @endforeach
                 </select>
             </div>

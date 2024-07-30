@@ -30,6 +30,7 @@ class UpdateProjectRequest extends FormRequest
             "image" => ["required", "url", "min:4", "max:255"],
             "technologies" => ["required", "string", "min:4", "max:255"],
             "client" => ["required", "string", "min:4", "max:255"],
+            "type_id" => ["required", "integer", "exists:types,id"],
         ];
     }
 
