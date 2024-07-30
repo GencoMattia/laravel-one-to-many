@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Project;
+use App\Models\Type;
 use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,12 +14,15 @@ class ProjectSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(Faker $faker): void
     {
         //
+        $types = Type::all()->pluck("id");
+
         $projects = [
             [
                 'title' => 'La Torre di Spellgard',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Restauro e potenziamento delle difese magiche di una torre antica.',
                 'image' => 'spellgard.jpg',
                 'technologies' => 'Magia arcana, ingegneria dwarven',
@@ -28,6 +32,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Il Portale per Evermeet',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Progetto di ricerca per stabilizzare un portale verso la patria elfica.',
                 'image' => 'evermeet.jpg',
                 'technologies' => 'Magia elfica, rune di teletrasporto',
@@ -37,6 +42,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Il Labirinto di Undermountain',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Mappatura e esplorazione del labirinto sotterraneo.',
                 'image' => 'undermountain.jpg',
                 'technologies' => 'Cartografia, incantesimi di rilevamento',
@@ -46,6 +52,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'La Flotta di Luskan',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Progettazione di nuove navi da guerra per la città portuale.',
                 'image' => 'luskanfleet.jpg',
                 'technologies' => 'Ingegneria navale, magia del vento',
@@ -55,6 +62,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Le Miniere di Mithral',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Ottimizzazione dell\'estrazione del prezioso metallo.',
                 'image' => 'mithralmines.jpg',
                 'technologies' => 'Macchinari nanici, incantesimi di rilevamento',
@@ -64,6 +72,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Il Tempio di Helm',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Restauro e fortificazione del santuario del dio della protezione.',
                 'image' => 'helmtemple.jpg',
                 'technologies' => 'Architettura sacra, rune di protezione',
@@ -73,6 +82,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'L\'Accademia di Stregoni',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Creazione di un simulatore di incantesimi per gli studenti.',
                 'image' => 'wizardacademy.jpg',
                 'technologies' => 'Illusioni magiche, cristalli di memoria',
@@ -82,6 +92,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'La Gilda dei Ladri',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Sviluppo di un sistema di comunicazione segreto.',
                 'image' => 'thievesguild.jpg',
                 'technologies' => 'Linguaggi in codice, messaggi cifrati',
@@ -91,6 +102,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Il Circo di Volothamp',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Progettazione di un nuovo spettacolo acrobatico.',
                 'image' => 'volothampcircus.jpg',
                 'technologies' => 'Acrobazia, illusioni minori',
@@ -100,6 +112,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'La Fortezza di Sundabar',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Potenziamento delle difese contro gli attacchi dei giganti.',
                 'image' => 'sundabarfortress.jpg',
                 'technologies' => 'Fortificazioni, trappole meccaniche',
@@ -109,6 +122,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Il Santuario di Mielikki',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Creazione di un giardino magico per la dea della natura.',
                 'image' => 'mielikkishrine.jpg',
                 'technologies' => 'Magia della natura, botanica',
@@ -118,6 +132,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'L\'Ordine del Guanto',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Sviluppo di nuove armature potenziate magicamente.',
                 'image' => 'orderofthegauntlet.jpg',
                 'technologies' => 'Forgiatura, incantesimi di protezione',
@@ -127,6 +142,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Il Clan Battlehammer',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Progettazione di un sistema di difesa per la fortezza nanica.',
                 'image' => 'battlehammerclan.jpg',
                 'technologies' => 'Ingegneria nanica, trappole meccaniche',
@@ -136,6 +152,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'La Torre di Ramazith',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Esplorazione della torre abbandonata di un potente mago.',
                 'image' => 'ramazithtower.jpg',
                 'technologies' => 'Disattivazione di trappole, decifrazione di rune',
@@ -145,6 +162,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Il Pozzo dei Draghi',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Creazione di un sistema di allerta per avvistamenti di draghi.',
                 'image' => 'dragonwell.jpg',
                 'technologies' => 'Cristalli di comunicazione, magia di divinazione',
@@ -154,6 +172,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Il Mercato di Waterdeep',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Sviluppo di un\'app per la gestione delle merci.',
                 'image' => 'waterdeepmarket.jpg',
                 'technologies' => 'Linguaggi di programmazione, interfacce utente',
@@ -163,6 +182,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'La Gilda degli Avventurieri',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Creazione di un database di missioni e ricompense.',
                 'image' => 'adventurersguild.jpg',
                 'technologies' => 'Gestione dati, interfacce utente',
@@ -172,6 +192,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Il Tempio di Tyr',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Restauro degli affreschi raffiguranti il dio della giustizia.',
                 'image' => 'tyrtemple.jpg',
                 'technologies' => 'Restauro artistico, magia della luce',
@@ -181,6 +202,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'La Scuola di Bardo',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Creazione di uno strumento musicale incantato.',
                 'image' => 'bardschool.jpg',
                 'technologies' => 'Liuteria, incantesimi di suono',
@@ -190,6 +212,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'La Torre dell\'Orologio',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Progettazione di un nuovo meccanismo per l\'orologio magico.',
                 'image' => 'clocktower.jpg',
                 'technologies' => 'Orologeria, magia del tempo',
@@ -199,6 +222,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Il Palazzo di Neverwinter',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Restauro dei giardini pensili del palazzo.',
                 'image' => 'neverwinterpalace.jpg',
                 'technologies' => 'Giardinaggio, magia della natura',
@@ -208,6 +232,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'La Fiera di Baldur\'s Gate',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Creazione di un gioco interattivo per i visitatori.',
                 'image' => 'baldursgatefair.jpg',
                 'technologies' => 'Illusioni, meccanica',
@@ -217,6 +242,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'La Gilda dei Mercanti',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Sviluppo di una rete di comunicazione commerciale.',
                 'image' => 'merchantguild.jpg',
                 'technologies' => 'Corrieri, messaggi cifrati',
@@ -226,6 +252,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Il Tempio di Sune',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Progettazione di un nuovo altare per la dea della bellezza.',
                 'image' => 'sunetemple.jpg',
                 'technologies' => 'Scultura, magia della luce, pietre preziose',
@@ -235,6 +262,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'La Scuola di Ladri',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Creazione di un simulatore di furto per gli studenti.',
                 'image' => 'thiefschool.jpg',
                 'technologies' => 'Illusioni, meccanica, trappole',
@@ -244,6 +272,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'La Torre di Zhentarim',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Infiltrazione e sabotaggio della base nemica.',
                 'image' => 'zhentarimtower.jpg',
                 'technologies' => 'Spionaggio, sabotaggio, incantesimi di occultamento',
@@ -253,6 +282,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Il Pozzo di Silverymoon',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Creazione di un sistema di purificazione dell\'acqua.',
                 'image' => 'silverymoonwell.jpg',
                 'technologies' => 'Ingegneria idraulica, magia dell\'acqua',
@@ -262,6 +292,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Il Mercato di Scornubel',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Progettazione di un nuovo sistema di illuminazione.',
                 'image' => 'scornubelmarket.jpg',
                 'technologies' => 'Lampade magiche, cristalli luminosi',
@@ -271,6 +302,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'La Gilda degli Artigiani',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Creazione di un catalogo online dei prodotti.',
                 'image' => 'artisanguild.jpg',
                 'technologies' => 'Web design, e-commerce',
@@ -280,6 +312,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Il Tempio di Gond',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Restauro della statua del dio della forgiatura.',
                 'image' => 'gondtemple.jpg',
                 'technologies' => 'Scultura, metallurgia, magia della terra',
@@ -289,6 +322,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'La Scuola di Guerrieri',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Creazione di un simulatore di combattimento.',
                 'image' => 'warriorschool.jpg',
                 'technologies' => 'Illusioni magiche, costrutti animati',
@@ -298,6 +332,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'La Spada di Drizzt',
+                'type_id' => $faker->randomElement($types),
                 'description' => 'Forgiatura di una spada leggendaria per un ranger drow.',
                 'image' => 'drizzt.jpg',
                 'technologies' => 'Metalli rari, magia drow',
